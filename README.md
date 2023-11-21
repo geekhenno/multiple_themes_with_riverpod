@@ -2,9 +2,14 @@
 
 A new Flutter project allows you to switch between multiple themes
 
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHFhYjlmcDlxdW5lNXg5ZWEzYzBnbml2bmZlY2lrcjQxc3NxMWRnYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rykaYinB5kV13FjA7g/giphy.gif)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
