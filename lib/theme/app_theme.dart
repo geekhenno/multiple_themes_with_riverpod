@@ -14,6 +14,7 @@ abstract class AppTheme {
 }
 
 enum ThemeTypes {
+  system('System'),
   light('Light'),
   dark('Dark'),
   nationalDay('National Day');
@@ -26,13 +27,17 @@ enum ThemeTypes {
 
 extension ThemeTypesEx on ThemeTypes {
   AppTheme get theme {
+    final brightness =
+        WidgetsBinding.instance.platformDispatcher.platformBrightness;
     switch (this) {
+      case ThemeTypes.system:
+        return brightness == Brightness.dark ? DarkTheme() : LightTheme();
+      case ThemeTypes.light:
+        return LightTheme();
       case ThemeTypes.dark:
         return DarkTheme();
       case ThemeTypes.nationalDay:
         return NationalDayTheme();
-      default:
-        return LightTheme();
     }
   }
 }
