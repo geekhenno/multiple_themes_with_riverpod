@@ -10,13 +10,14 @@ final sharedPrefProvider =
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  final int selectedTheme = prefs.getInt(AppTheme.themeKey) ?? 0;
+  final int? selectedTheme = prefs.getInt(AppTheme.themeKey);
   runApp(
     ProviderScope(
       overrides: [
         sharedPrefProvider.overrideWithValue(prefs),
-        appThemeProvider
-            .overrideWith((ref) => ThemeTypes.values[selectedTheme]),
+        if (selectedTheme != null)
+          appThemeProvider
+              .overrideWith((ref) => ThemeTypes.values[selectedTheme]),
       ],
       child: const MyApp(),
     ),
